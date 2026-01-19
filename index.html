@@ -11,7 +11,21 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-26GRPDR73Z');
+      // gtag('config', 'G-26GRPDR73Z');
+
+function getParamFromUrl(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
+
+const clientId = getParamFromUrl('clientId');
+const sessionId = getParamFromUrl('sessionId');
+
+gtag('config', 'G-26GRPDR73Z', {
+  client_id: clientId,
+  session_id: sessionId
+});
+
     </script>
   
 <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -31,6 +45,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </body>
 </html>
+
 
 
 
